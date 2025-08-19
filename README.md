@@ -1,12 +1,9 @@
- <img src="https://cdn.discordapp.com/attachments/1349427999568691271/1407271754757443664/file_00000000f54861f5a19d5d5255e98132.png?ex=68a57f74&is=68a42df4&hm=1afbe45a5ba8dee4af9312b4bbc682e510a4af0155f1796f316a1d448b1d2e69&" 
-     alt="Viking fail" 
-     width="100">
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Arctic Vikings Info</title>
+<title>Arctic Vikings</title>
 <style>
   body {
     margin: 0;
@@ -21,15 +18,15 @@
   }
 
   h1 {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     color: crimson;
     text-shadow: 0 0 15px red;
   }
 
-  /* Buttons styling */
   .button-container {
     display: flex;
     gap: 20px;
+    margin-bottom: 30px;
   }
 
   button {
@@ -47,17 +44,50 @@
     background-color: red;
     transform: scale(1.1);
   }
+
+  section {
+    display: none;
+    max-width: 70%;
+    text-align: center;
+  }
+
+  section.active {
+    display: block;
+  }
 </style>
 </head>
 <body>
 
-<h1>Arctic Vikings Info</h1>
+<h1>Arctic Vikings</h1>
 
 <div class="button-container">
-  <button onclick="https://gity489.github.io/Arctic-Vikings-history/` ">History</button>
-<button onclick="https://gity489.github.io/Arctic-Vikings-ranks/'">Ranking</button
-  <button onclick="https://gity489.github.io/Arctic-Vikings-events-/'">Events</button>
+  <button onclick="showPage('https://gity489.github.io/Arctic-Vikings-history/')">History</button>
+  <button onclick="showPage('https://gity489.github.io/Arctic-Vikings-ranks/')">Ranking</button>
+  <button onclick="showPage('https://gity489.github.io/Arctic-Vikings-events-/')">Events</button>
 </div>
+
+<section id="history" class="active">
+  <h2>History</h2>
+  <p>The Arctic Vikings history goes on.</p>
+</section>
+
+<section id="ranking">
+  <h2>Ranking</h2>
+  <p>The ice cold rankings (YIKES!).</p>
+</section>
+
+<section id="events">
+  <h2>Events</h2>
+  <p>Discover all events in Arctic Vikings history.</p>
+</section>
+
+<script>
+function showPage(id) {
+  document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+</script>
 
 </body>
 </html>
+ 
