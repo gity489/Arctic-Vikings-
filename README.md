@@ -1,93 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Arctic Vikings</title>
-<style>
-  body {
-    margin: 0;
-    height: 100vh;
-    background: linear-gradient(135deg, black, darkred, black);
-    color: white;
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
 
-  h1 {
-    margin-bottom: 30px;
-    color: crimson;
-    text-shadow: 0 0 15px red;
-  }
+  <title>Simple Sidebar</title>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+    }
 
-  .button-container {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 30px;
-  }
+    /* Sidebar styles */
+    .sidebar {
+      position: fixed;      /* stays on the side */
+      top: 0;
+      left: 0;
+      width: 220px;
+      height: 100vh;        /* full screen height */
+      background: white;
+      border-right: 1px solid #ddd;
+      padding: 20px;
+      box-shadow: 2px 0 8px rgba(0,0,0,0.1);
+    }
 
-  button {
-    padding: 15px 30px;
-    font-size: 1.2em;
-    color: white;
-    background-color: crimson;
-    border: 2px solid red;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 0.3s;
-  }
+    .sidebar h2 {
+      margin-top: 0;
+      font-size: 20px;
+      color: #333;
+    }
 
-  button:hover {
-    background-color: red;
-    transform: scale(1.1);
-  }
+    .sidebar a {
+      display: block;
+      margin: 12px 0;
+      text-decoration: none;
+      color: #007bff;
+      font-weight: bold;
+    }
 
-  section {
-    display: none;
-    max-width: 70%;
-    text-align: center;
-  }
+    .sidebar a:hover {
+      text-decoration: underline;
+    }
+  
 
-  section.active {
-    display: block;
-  }
-</style>
-</head>
-<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>Links</h2>
+    <a href="https://google.com" target="_blank">Google</a>
+    <a href="https://youtube.com" target="_blank">YouTube</a>
+    <a href="https://github.com" target="_blank">GitHub</a>
+    <a href="https://example.com" target="_blank">Example</a>
+  </div>
 
-<h1>Arctic Vikings</h1>
-
-<div class="button-container">
-  <button onclick="showPage('https://gity489.github.io/Arctic-Vikings-history/')">History</button>
-  <button onclick="showPage('https://gity489.github.io/Arctic-Vikings-ranks/')">Ranking</button>
-  <button onclick="showPage('https://gity489.github.io/Arctic-Vikings-events-/')">Events</button>
-</div>
-
-<section id="history" class="active">
-  <h2>History</h2>
-  <p>The Arctic Vikings history goes on.</p>
-</section>
-
-<section id="ranking">
-  <h2>Ranking</h2>
-  <p>The ice cold rankings (YIKES!).</p>
-</section>
-
-<section id="events">
-  <h2>Events</h2>
-  <p>Discover all events in Arctic Vikings history.</p>
-</section>
-
-<script>
-function showPage(id) {
-  document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-}
-</script>
-
-</body>
-</html>
- 
